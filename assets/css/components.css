@@ -90,11 +90,21 @@
 
 /* ---------- 2. Nagłówek i nawigacja ---------- */
 
+/* Nagłówek jest position: fixed (nie sticky), tak samo jak rozwijane menu mobilne:
+   oba elementy liczą pozycję od tego samego miejsca (okna przeglądarki), więc nie mogą się
+   rozjechać — także w Safari na iPhonie, które inaczej traktuje sticky przy blokadzie przewijania. */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   height: var(--header-h);
+}
+
+/* Bez JS menu jest zwykłą, zawijaną listą — nagłówek zostaje w normalnym układzie strony. */
+html:not(.js) .site-header {
+  position: relative;
 }
 
 /* Szklane tło jest na pseudo-elemencie: backdrop-filter na samym nagłówku
@@ -106,7 +116,7 @@
   inset: 0;
   z-index: -1;
   border-bottom: 1px solid var(--c-line);
-  background: rgb(10 11 13 / 0.78);
+  background: rgb(10 11 13 / 0.9);
   -webkit-backdrop-filter: saturate(1.4) blur(16px);
   backdrop-filter: saturate(1.4) blur(16px);
   opacity: 0;
@@ -120,7 +130,9 @@
 
 /* Przy otwartym menu nagłówek jest w pełni kryjący — nic nie prześwituje spod menu. */
 .site-header.is-open::before {
-  background: rgb(10 11 13 / 0.97);
+  background: var(--c-bg);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .site-header__inner {
@@ -301,9 +313,7 @@
     justify-content: flex-start;
     gap: 2rem;
     padding: 1.5rem var(--gutter) calc(2rem + env(safe-area-inset-bottom));
-    background: rgb(10 11 13 / 0.97);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
+    background: var(--c-bg);
     overflow-y: auto;
     opacity: 0;
     visibility: hidden;
@@ -370,7 +380,6 @@
   display: flex;
   align-items: center;
   min-height: min(100svh, 58rem);
-  margin-top: calc(var(--header-h) * -1);
   padding-top: calc(var(--header-h) + clamp(2.5rem, 7vw, 5rem));
   padding-bottom: clamp(3.5rem, 8vw, 6rem);
   overflow: clip;
