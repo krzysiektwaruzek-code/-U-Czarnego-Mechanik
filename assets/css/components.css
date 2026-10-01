@@ -118,6 +118,11 @@
   opacity: 1;
 }
 
+/* Przy otwartym menu nagłówek jest w pełni kryjący — nic nie prześwituje spod menu. */
+.site-header.is-open::before {
+  background: rgb(10 11 13 / 0.97);
+}
+
 .site-header__inner {
   display: flex;
   align-items: center;
@@ -345,9 +350,15 @@
     font-size: 1.05rem;
   }
 
-  html.nav-open,
-  html.nav-open body {
+  /* Blokada przewijania tła tylko na <html>. Ustawienie overflow: hidden także na <body>
+     robi z niego osobny kontener przewijania — lepki nagłówek przestaje wtedy trzymać się
+     ekranu i odjeżdża razem ze stroną (w menu robi się „dziura” nad pierwszą pozycją). */
+  html.nav-open {
     overflow: hidden;
+  }
+
+  .js .nav {
+    overscroll-behavior: contain;
   }
 }
 

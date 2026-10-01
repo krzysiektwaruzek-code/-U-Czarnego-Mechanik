@@ -58,7 +58,8 @@
         const firstLink = $("a", nav);
         if (firstLink) firstLink.focus({ preventScroll: true });
       } else if (restoreFocus) {
-        toggle.focus();
+        // preventScroll: przycisk jest w lepkim nagłówku, a zwykły focus() przewijałby stronę.
+        toggle.focus({ preventScroll: true });
       }
     };
 
