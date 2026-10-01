@@ -91,7 +91,7 @@ Każdy brakujący element ma gotowy, ostylowany kod w `docs/snippets/` oraz kome
 
 - [ ] Ustawiona domena (`set-domain.sh`), brak `__DOMAIN__` w plikach
 - [ ] Podłączony `formEndpoint` i wysłana wiadomość testowa
-- [ ] Właściciel potwierdził dane z `docs/FACT-CHECK.md` (adres, nazwa, rok, NIP/REGON w stopce)
+- [ ] Właściciel potwierdził dane z `docs/FACT-CHECK.md` (adres, nazwa, NIP/REGON w stopce)
 - [ ] Uzupełnione telefon i godziny (lub świadoma decyzja, że ich nie podajemy)
 - [ ] Włączony SSL i przekierowanie HTTPS
 - [ ] Test na telefonie: menu, formularz, przyciski „Wyznacz trasę”, mapa po kliknięciu

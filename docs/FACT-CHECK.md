@@ -26,14 +26,14 @@ informacji o firmie użytych na stronie, ich źródło oraz lista rzeczy, który
 | Adres: ul. Jeziorna 44, 83-312 Kamela | wszędzie, schema `address` | Katalogi firm (spójne); miejscowość zgodna ze współrzędnymi z linku |
 | Gmina Somonino, powiat kartuski, woj. pomorskie | hero, O warsztacie, Dojazd | Katalogi firm; Wikipedia (Kamela leży w gminie Somonino) |
 | Zakres: konserwacja i naprawa pojazdów samochodowych (PKD 45.20.Z) | hero, O warsztacie, stopka, schema `description` | Główny PKD firmy w katalogach |
-| Działalność od 2018 r. | hero (chip), O warsztacie, karta warsztatu | Data rozpoczęcia działalności w katalogach |
 | NIP 5891970753, REGON 221822159 | stopka | Katalogi firm; obie liczby mają poprawne sumy kontrolne |
-| Współrzędne 54.223158, 18.24116 | karta warsztatu, mapa, linki do tras, schema `geo` | Bezpośrednio z podanego linku Map Google |
+| Współrzędne wizytówki z linku Map Google | tylko w działających linkach (trasa, mapa) i w schema `geo` — nigdzie jako widoczny tekst | Bezpośrednio z podanego linku Map Google |
 | Linki „Wyznacz trasę” / „Mapy Google” | hero, Dojazd, stopka, pasek mobilny | Oficjalny format linków Google Maps + link do wizytówki (bez parametrów śledzących) |
 
 ## Czego świadomie NIE ma na stronie
 
 - usług, ofert, specjalizacji, marek pojazdów, cen, promocji, gwarancji, certyfikatów,
+- daty rozpoczęcia działalności (usunięta na życzenie klienta) oraz współrzędnych jako widocznego tekstu,
 - numeru telefonu, e-maila, godzin otwarcia, profili społecznościowych,
 - opinii, ocen i liczby opinii (także w schema.org — brak `Review`/`AggregateRating`),
 - informacji o właścicielu i pracownikach (poza nazwą rejestrową w stopce), historii firmy,
