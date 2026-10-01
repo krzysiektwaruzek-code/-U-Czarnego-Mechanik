@@ -1,0 +1,66 @@
+<!--
+  TELEFON, E-MAIL I GODZINY OTWARCIA — wklej w index.html wewnątrz
+  <ul class="contact-list"> (sekcja Kontakt), w miejsce komentarza [UZUPEŁNIJ].
+
+  Dodatkowo, po otrzymaniu danych:
+  1) Wpisz je do JSON-LD w <head> (blok z @type "AutoRepair") — patrz sekcja 3 poniżej.
+  2) Dodaj przycisk „Zadzwoń” do paska akcji (<aside class="action-bar">).
+  3) Usuń z formularza uwagę „Tryb podglądu” dopiero po ustawieniu formEndpoint
+     w assets/js/site-config.js (znika sama).
+-->
+
+<!-- 1) Telefon -->
+<li>
+  <a class="contact-item" href="tel:+48XXXXXXXXX">
+    <span class="contact-item__icon" aria-hidden="true">
+      <svg class="icon"><use href="#i-phone" /></svg>
+    </span>
+    <span>
+      <span class="contact-item__label">Telefon</span>
+      <span class="contact-item__value">XXX XXX XXX</span>
+    </span>
+  </a>
+</li>
+
+<!-- E-mail -->
+<li>
+  <a class="contact-item" href="mailto:ADRES@DOMENA.PL">
+    <span class="contact-item__icon" aria-hidden="true">
+      <svg class="icon"><use href="#i-mail" /></svg>
+    </span>
+    <span>
+      <span class="contact-item__label">E-mail</span>
+      <span class="contact-item__value">ADRES@DOMENA.PL</span>
+    </span>
+  </a>
+</li>
+
+<!-- 2) Godziny otwarcia (godziny wpisz dokładnie tak, jak poda właściciel) -->
+<li class="contact-item">
+  <span class="contact-item__icon" aria-hidden="true">
+    <svg class="icon"><use href="#i-clock" /></svg>
+  </span>
+  <div class="contact-item__body">
+    <span class="contact-item__label">Godziny otwarcia</span>
+    <dl class="hours">
+      <div><dt>Poniedziałek – piątek</dt><dd>GG:MM – GG:MM</dd></div>
+      <div><dt>Sobota</dt><dd>GG:MM – GG:MM</dd></div>
+      <div><dt>Niedziela</dt><dd>nieczynne</dd></div>
+    </dl>
+  </div>
+</li>
+
+<!--
+  3) JSON-LD — dopisz do obiektu "AutoRepair" w <head> (tylko potwierdzone dane!):
+
+  "telephone": "+48XXXXXXXXX",
+  "email": "ADRES@DOMENA.PL",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "GG:MM",
+      "closes": "GG:MM"
+    }
+  ]
+-->

@@ -1,0 +1,35 @@
+<!--
+  SEKCJA „GALERIA / REALIZACJE” — wklej w index.html pomiędzy „O warsztacie” a „Dojazd”.
+
+  ZASADY:
+  - Tylko prawdziwe zdjęcia warsztatu / wykonanych prac, na których wykorzystanie
+    jest zgoda właściciela. Żadnych zdjęć stockowych ani generowanych.
+  - Zdjęcia zapisz jako .webp (lub .jpg) w assets/img/gallery/, szerokość do 1600 px,
+    jakość ok. 80 (zwykle 100–250 KB). Podaj realne width/height, aby uniknąć skoków układu.
+  - alt: krótki, rzeczowy opis tego, co jest na zdjęciu.
+-->
+<section class="section" id="galeria" aria-labelledby="gallery-title">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Galeria</p>
+      <h2 id="gallery-title">Warsztat i realizacje</h2>
+    </header>
+
+    <ul class="gallery">
+      <li data-reveal>
+        <figure>
+          <img
+            src="/assets/img/gallery/01.webp"
+            alt="OPIS ZDJĘCIA"
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>PODPIS (opcjonalnie)</figcaption>
+        </figure>
+      </li>
+      <!-- Kolejne zdjęcia: powiel blok <li data-reveal> -->
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!--
+  SEKCJA „USŁUGI” — wklej w index.html pomiędzy sekcją „O warsztacie” a „Dojazd”
+  (w miejsce komentarza [UZUPEŁNIJ] Sekcja „Usługi”).
+
+  ZASADY:
+  - Wpisuj wyłącznie usługi potwierdzone przez właściciela warsztatu.
+  - Nie dodawaj cen, gwarancji ani liczb, jeśli nie zostały potwierdzone.
+  - Dodaj link do sekcji w nawigacji (nagłówek i stopka):
+      <li><a class="nav__link" href="#uslugi">Usługi</a></li>
+  - Powielaj blok <li class="service-card"> tyle razy, ile jest usług.
+-->
+<section class="section" id="uslugi" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Oferta</p>
+      <h2 id="services-title">Zakres usług</h2>
+      <p class="lead">KRÓTKI WSTĘP OD WŁAŚCICIELA (opcjonalnie).</p>
+    </header>
+
+    <ul class="service-grid">
+      <li class="service-card" data-reveal>
+        <span class="service-card__num" aria-hidden="true">01</span>
+        <h3>NAZWA USŁUGI</h3>
+        <p>OPIS USŁUGI — własnymi słowami właściciela.</p>
+      </li>
+      <li class="service-card" data-reveal style="--d: 80ms">
+        <span class="service-card__num" aria-hidden="true">02</span>
+        <h3>NAZWA USŁUGI</h3>
+        <p>OPIS USŁUGI.</p>
+      </li>
+      <li class="service-card" data-reveal style="--d: 160ms">
+        <span class="service-card__num" aria-hidden="true">03</span>
+        <h3>NAZWA USŁUGI</h3>
+        <p>OPIS USŁUGI.</p>
+      </li>
+    </ul>
+  </div>
+</section>

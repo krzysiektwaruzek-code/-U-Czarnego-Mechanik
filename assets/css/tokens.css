@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Tokeny projektowe: fonty, kolory, typografia, odstępy.
+   Zmiana wyglądu całej strony = zmiana wartości w tym pliku.
+   ========================================================================== */
+
+/* Fonty hostowane lokalnie (licencja OFL, patrz assets/fonts/LICENSE-*.txt).
+   Pliki zawierają podzbiór: łacina + polskie znaki + typograficzna interpunkcja. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin.woff2") format("woff2");
+  unicode-range:
+    U+0020-007E, U+00A0, U+00A9, U+00B7, U+00D3, U+00F3, U+00D7, U+2013, U+2014, U+2018, U+2019,
+    U+201C, U+201D, U+201E, U+2022, U+2026, U+20AC;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0104, U+0105, U+0106, U+0107, U+0118, U+0119, U+0141, U+0142, U+0143, U+0144, U+015A, U+015B,
+    U+0179, U+017A, U+017B, U+017C;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-latin.woff2") format("woff2");
+  unicode-range:
+    U+0020-007E, U+00A0, U+00A9, U+00B7, U+00D3, U+00F3, U+00D7, U+2013, U+2014, U+2018, U+2019,
+    U+201C, U+201D, U+201E, U+2022, U+2026, U+20AC;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0104, U+0105, U+0106, U+0107, U+0118, U+0119, U+0141, U+0142, U+0143, U+0144, U+015A, U+015B,
+    U+0179, U+017A, U+017B, U+017C;
+}
+/* Czcionka zastępcza o zbliżonych metrykach — ogranicza skok układu (CLS) przy podmianie fontu. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  size-adjust: 107.4%;
+  ascent-override: 90.2%;
+  descent-override: 22.5%;
+  line-gap-override: 0%;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Kolory */
+  --c-bg: #0a0b0d;
+  --c-bg-elev: #101216;
+  --c-surface: rgb(255 255 255 / 0.035);
+  --c-surface-strong: rgb(255 255 255 / 0.065);
+  --c-line: rgb(255 255 255 / 0.09);
+  --c-line-strong: rgb(255 255 255 / 0.17);
+  --c-text: #eef0f3;
+  --c-text-muted: #a9b0bc;
+  --c-text-dim: #808998;
+  --c-accent: #ff9d2e;
+  --c-accent-strong: #ffb457;
+  --c-accent-soft: rgb(255 157 46 / 0.14);
+  --c-accent-ink: #1a0f00;
+  --c-danger: #ff9c9c;
+  --c-success: #8be0a8;
+
+  /* Typografia */
+  --font-body:
+    "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display:
+    "Space Grotesk", "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lead: clamp(1.0625rem, 0.35vw + 1rem, 1.25rem);
+  --fs-h3: clamp(1.15rem, 0.5vw + 1.05rem, 1.4rem);
+  --fs-h2: clamp(1.95rem, 3.2vw + 0.9rem, 3.4rem);
+  --fs-h1: clamp(2.7rem, 8.2vw + 0.4rem, 6.6rem);
+
+  /* Układ */
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 4.5vw, 2.5rem);
+  --header-h: 4.5rem;
+  --section-y: clamp(4.5rem, 10vw, 8.5rem);
+
+  /* Kształty i cienie */
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 26px;
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 24px 60px -30px rgb(0 0 0 / 0.8);
+
+  /* Ruch */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
